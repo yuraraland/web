@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="button" value="버튼1" onclick="test1()"/>
+	<br/>
+	<button type="button" onclick="test2()">버튼2</button>
+	<br/>
+	
+	<input id="txt"/><span>버튼2를 누르기 전에 입력하세요!</span><br/>
+	<textarea rows="6" cols="50" id="ta" name="ta">여기에...</textarea>
+	
+	
+	<script>
+	
+			let a = 10;
+			let ta = document.getElementById("ta");
+		
+		function test1() {
+			
+			ta.innerHTML = ++a;
+			
+		}
+		
+		function test2() {
+			
+			//txt에 입력이 되었을 때만 구동시킨다.
+			//txt에 입력이 되었나 아닌가를 가린다. (유효성 검사)
+			
+			
+			let txt = document.getElementById("txt");
+			let str = txt.value;
+			
+			if(str.trim().length>0){
+				
+			ta.innerHTML = str;
+			
+			}
+			
+		}
+		
+	</script>
+</body>
+</html>

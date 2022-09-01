@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+/*
+아이디가 메뉴인 태그는 여백이 없어야 하고, 너비를 300px로 지정한다.
+그리고 list앞에 점을 없애야 한다.
+
+li태그들은 너비가 300px, 높이100px로 지정한다.
+
+li안에 있는 모든 a태그들은 블록레벨로 변경하고, 너비와 높이를 li의 크기와
+동일하게 한다. 그리고 글씨들은 화면에서 보이지 않게 한다.
+
+그리고 배경으로는 메일은 mail.gif, 카페는 cafe.gif... 을 넣는다.
+*/
+
+#menu{
+	padding: 0px;
+	list-style: none;
+	margin: 0px;
+	width: 300px;
+}
+
+#menu>li{
+	width: 300px;
+	height: 100px;
+}
+#menu a{
+	display: block;
+	width:300;
+	height: 100px;
+	text-indent: -9999px;
+}
+
+#m1>a{
+	background-image: url(images/mail.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	
+}
+#m2>a{
+	background-image: url(images/cafe.gif);
+}
+#m3>a{
+	background-image: url(images/blog.gif);
+}
+#m4>a{
+	background-image: url(images/kin.gif);
+}
+/*마우스가 올라왔을 때 이미지의 위치를 변경한다.*/
+
+#menu>li>a:hover{
+	background-position: right top;
+}
+
+
+</style>
+</head>
+<body>
+<div>
+		<header><h1>수직이미지메뉴</h1></header>
+		<article>
+			<ul id="menu">
+				<li id="m1"><a href="">메일</a></li>
+				<li id="m2"><a href="">카페</a></li>
+				<li id="m3"><a href="">블로그</a></li>
+				<li id="m4"><a href="">지식in</a></li>
+			</ul>
+		</article>
+	</div>
+</body>
+</html>

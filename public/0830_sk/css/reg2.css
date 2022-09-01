@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+table.table_type01 input[type=text]{
+	width:120px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 5px 5px;
+}
+table.table_type01 input[type=password]{
+	width:120px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 5px 5px;
+}
+table.table_type01 select{
+	width:120px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 5px 5px;
+}
+
+tbody{
+	border-top: 2px solid #c1c1c1;
+	border-bottom: 2px solid #c1c1c1;
+}
+.req{
+	display: inline-block;
+	background: url(../img/bult.png);
+	background-repeat: no-repeat;
+	width:8px;
+	height:12px;
+	text-indent: -9999px;
+	margin-left: -12px;
+}
+
+th{
+	border-top: 1px solid #c1c1c1;
+	border-bottom: 1px solid #c1c1c1;
+	border-right: 1px solid #c1c1c1;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 22px;
+	padding-right: 10px;
+	background-color: #e2e2e2;
+	font-weight: bold;
+}
+td{
+	border-top: 1px solid #c1c1c1;
+	border-bottom: 1px solid #c1c1c1;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 15px;
+	padding-right: 40px;
+}
+td .guide_txt{
+	margin-bottom:10px;
+	font-size: 11px;
+	color: #c1c1c1;
+}
+.btn_area{
+	text-align: center;
+	margin: 30px;
+}
+.b_ok{
+	width: 65px;
+	height: 30px;
+	background-position: 0px -110px;
+}
+.b_cancel{
+	width: 65px;
+	height: 30px;
+	background-position: -100px -110px;
+}
+.fr{
+	float:right !important;
+}
+.b_bdcheck{
+	text-align: center;
+	display: inline-block;
+	width: 58px;
+	height: 28px;
+	background-position: -0px -150px;
+}
+
+td .hidden{
+	display: inline-block;
+	text-indent: -9999px;
+}
+.data{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.b_check>a{
+	background: url(../img/btn.png);
+	background-repeat: no-repeat;
+	display: inline-block;
+	text-indent: -9999px;
+	width: 58px;
+	height: 28px;
+	background-position: -140px -150px;
+}
+#c{
+	font-size: 11px;
+	color: #000;
+	font-weight: bold;
+}
+#c_icon{
+	display: inline-block;
+	background: url(../img/bult.png);
+	background-repeat: no-repeat;
+	width:12px;
+	height: 12px;
+	background-position: 0px -20px;
+}
+.address{
+	text-indent: -9999px;
+	display: inline-block;
+	background: url(../img/btn.png);
+	background-repeat: no-repeat;
+	width:80px;
+	height:30px;
+	background-position: -60px -150px;
+	
+}
+.ad{
+	margin-bottom: 10px; 
+}

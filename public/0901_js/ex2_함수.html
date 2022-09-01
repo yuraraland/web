@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="button" value="버튼1" onclick="test1()"/>
+	<br/>
+	<button type="button" onclick="test2()">버튼2</button>
+	<!-- type을 꼭 명시해야 한다. 타입이 없으면 submit 기능으로
+		 무조건 서버에 요청을 하기 때문에... -->
+	<br/>
+	<textarea id="ta" name="ta" rows="6" cols="50">여기에...</textarea>
+	<!-- 현재 문서에서 접근할 때 id가 무조건 필요하다! -->
+	<!-- name은 서버로 전달할때 쓰는 파라메터 이름. -->
+	<script>
+		let a = 10;
+		
+		function test1(){
+			//현재 화면에 a의 값을 출력하자.
+			document.write("a=" + a);
+			//document.write 는 기존의 데이터를 싹 다 지우고
+			//새로 쓰게 한다.
+		}
+		function test2() {
+			//현재 문서에서 아이디가 ta인 요소를 검색한다.
+			let ta = document.getElementById("ta");
+			
+			//검색된 ta안에 문자열로 변수 a의 값을 지정한다.
+			ta.innerText = ++a;
+			//시작 태그와 종료 태그 사이에 넣기 위해 innerText를 썼다.
+			
+		}
+	</script>
+</body>
+</html>

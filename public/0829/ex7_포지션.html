@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div#wrap{
+		border: 2px solid red;
+		width: 600px;
+		margin: 30px auto;
+		padding: 10px;
+	}
+	div#wrap>div{
+		border: 1px solid black;
+		width: 100px;
+		height: 100px;
+		margin-bottom: 20px;
+		position: relative; /*상대적 위치(좌표)*/
+	}
+	div#d1{
+		background-color: #f00;
+		top: 20px;
+		left: 20px;
+	}
+	div#d2{
+		background-color: #0f0;
+		top: 20px;
+		left: 20px;
+	}
+	div#d3{
+		background-color: #00f;
+		top: 20px;
+		left: 20px;
+	}
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="d1"></div>
+		<div id="d2"></div>
+		<div id="d3"></div>
+	</div>
+</body>
+</html>

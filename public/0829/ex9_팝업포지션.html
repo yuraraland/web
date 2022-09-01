@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div#popup{
+		width: 250px;
+		height: 150px;
+		border: 1px solid black;
+		background: rgba(100,120,150,0.4);
+		position: absolute;
+		top: 110px;
+		left: 350px;
+		display: none;
+	}
+	div#bar{
+		width: 100%;
+		height: 20px;
+		border-bottom: 1px solid #000;
+		background-color: #06a;
+		text-align: right;
+	}
+	div#exit_area{
+		display: inline-block; /*인라인 레벨이면서 크기 설정이 가능하다.*/
+		width: 16px;
+		height: 16px;
+		position: relative;
+		right: 0px;
+	}
+	div#exit_area>a{
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-image: url(images/exit.png);
+		background-repeat: no-repeat;
+		background-size: 16px;
+		text-indent: -1000px;
+		font-size: 0px;
+		position: absolute;
+		top:0;
+		right: 0;
+	}
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<header>
+			<h1>포지션 연습</h1>
+		</header>
+		<article>
+			<button type="button" onclick="exe()">팝업</button>
+		</article>
+	</div>
+	
+	<!-- ----------------------- 팝업창 ----------------------- -->
+	<div id="popup">
+		<div id="bar">
+			<div id="exit_area">
+				<a href="javascript:closed()" >닫기</a>
+			</div>
+		</div>
+		<p>
+			팝업창의 내용을 구성합니다.
+		</p>
+	</div>
+	<!-- ------------------------------------------------------ -->
+	
+		
+	<script>
+		//함수를 정의할 때는 무조건 앞에 function이라는 키워드를 사용해야 한다.
+		function exe(){
+			var pop = document.getElementById("popup");
+			
+			//얻어낸 요소를 보이게 한다.
+			pop.style.display = "block";
+			
+		}
+		
+		function closed(){
+			//현재 문서(document)에서 아이디가 "popup"인 요소
+			var pop = document.getElementById("popup");
+			
+			//얻어낸 요소를 보이지 않게 한다.
+			pop.style.display = "none";
+		}
+	</script>
+</body>
+</html>

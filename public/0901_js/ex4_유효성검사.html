@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div id="wrap">
+		<header>
+			<h1>유효성 검사</h1>
+		</header>
+		<article>
+			<form action="test.jsp" get="post">
+			<!-- action에는 서버 get에는 방식-->
+				<label for="s_age">나이:</label>
+				<input type="text" id="s_age" name="age"/>
+				<br/>
+				
+				<button type="button" onclick="test()">확인</button>
+				</form>
+		</article>
+	</div>
+	
+	<script>
+			
+		function test() {
+			//현재 문서에서 아이디가 s_age인 요소를 검색하여
+			//s_age에 입력된 값을 얻어낸다.
+			//그리고 그 값이 20~29사이이면 "20대" 라는 문자열을
+			//경고창으로 출력하고, 그렇지 않고
+			//30~39사이면 "30대" 라는 문자열을
+			//경고창으로 출력한다.
+			
+			let s_age = document.getElementById("s_age");
+			
+			let str = s_age.value; //!!!!!!!!!!!!!!!!중요!!!!!!!!!!!!!!!!!!!!
+			
+			if(str != "" && str.trim().length>0) {
+				//나이를 입력한 경우
+				
+				let age = parseInt(str);
+				//숫자형 문자열을 정수로 변환해 준다.
+				
+				//이제 20대인지 30대인지 구별해야 한다.
+				if(age >= 20 && age < 30)
+					alert("20대");
+				else if (age >= 30 && age <40)
+					alert("30대");
+				
+			}
+			
+		}
+	
+	
+	
+	</script>
+</body>
+</html>

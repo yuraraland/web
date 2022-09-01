@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#menu{
+		list-style: none; /* list item 앞에 점 삭제 */
+		padding: 0px; /* 안쪽 여백 없이기 */
+		margin: 0px;
+		width:200px;
+		border-top: 2px solid black;
+		
+	}
+	#menu>li{
+		border: 2px solid black;
+		height: 58px;
+		width: 196px; /*border의 두깨가 2px이므로 양쪽을 더하면 4px이다.
+						그래서 196px로 너비를 지정하면, 양쪽 보더의 두께와 함게
+						총 200px이 된다.*/
+		text-align: center;
+		border-top: none;
+		background-color: #00bfff;
+	}
+	#menu>li>a{
+		display: block; /* 인라인 레벨을 블럭 레벨로 설정함 */
+		width: 100%;
+		height: 100%;
+		line-height: 58px;
+		text-decoration: none;
+		font-size: 30px;
+		font-weigth: bold;
+		color:#fff;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<header><h1>수직메뉴</h1></header>
+		<article>
+			<ul id="menu">
+				<li><a href="">메일</a></li>
+				<li><a href="">카페</a></li>
+				<li><a href="">블로그</a></li>
+				<li><a href="">지식in</a></li>
+			</ul>
+		</article>
+	</div>
+</body>
+</html>

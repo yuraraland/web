@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	ul#nav{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		overflow: hidden;
+		font: bold 25px sans-serif;
+	}
+	ul#nav li{
+	/*	border: 1px solid red; */
+		display: inline; /* 수평으로 배치는 가능하나 크기 조정이 안 된다 */
+		margin-right: 20px;
+	}
+	/* a태그의 글꼴 색상을 검정색으로 하고, 
+	   밑줄을 없애자. */
+	ul#nav a{
+		color: #000;
+		text-decoration: none; /* 밑줄 없애기 */
+	}
+	/* 마우스를 올렸을 때 글꼴의 색상을 #00bfff로 하고, 밑줄이 나타나게 하자. */
+	ul#nav a:hover{
+		color: #00bfff;
+		text-decoration: underline;
+	}
+</style>
+</head>
+<body>
+<h1>수평 메뉴</h1>
+	<ul id="nav">
+		<li id="mail"><a href="">메일</a></li>
+		<li id="cafe"><a href="">카페</a></li>
+		<li id="blog"><a href="">블로그</a></li>
+		<li id="kin"><a href="">지식in</a></li>
+	</ul>
+</body>
+</html>

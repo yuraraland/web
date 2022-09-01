@@ -1,0 +1,180 @@
+@charset "UTF-8";
+@import "reset.css";
+
+	#wrap{
+		width: 100%;
+		height: 100%;
+		margin: auto;
+	}
+	/****** 상단 영역 ******/
+	#header{
+		position: relative;
+		width: 970px;
+		height: 140px;
+		margin: auto;
+	}
+	#header>h1{
+		text-indent: -1000px;
+		width: 181px;
+		height: 59px;
+		background-image: url(../img/logo.png);
+		background-repeat: no-repeat;
+	}
+	#header .gnb{ /*아이디가 header인 요소 아래에 자손으로 클래스가 gnb인 요소!*/
+		list-style: none;
+		/*header의 아래쪽에 ul을 붙여놓는다.*/
+		position: absolute;
+		bottom: 0px;
+		width: 100%;
+		height: 50px;
+		overflow: hidden;
+		font-size: 0px; /*안쪽의 요소(li)가 inline-block으로 설정 시
+							글꼴의 크기와 연관되어 간격이 생기므로 글꼴크기를 없애준다.*/
+		padding: 0px;
+	}
+	#header .gnb li{
+		display: inline-block;
+		width: 194px;
+		height: 100%;
+		background-color: #ff5001;
+	}
+	#header>.gnb>li>a{
+		display: block;
+		height: 100%;
+		width: auto;
+		text-align: center;
+	}
+	#header>.gnb>li>a>span.menu{
+		display: inline-block;
+		height: 20px;
+		line-height: 20px;
+		color: #fff;
+		font-size: 16px;
+		font-weight: bold;
+		margin-top: 14px;
+		padding-left: 30px;
+		background: url(../img/gnb_bult.png);
+		background-repeat: no-repeat;
+	}
+	#header>.gnb>li>a>span.m01{
+		background-position: 0px 0px;
+	}
+	#header>.gnb>li>a>span.m02{
+		background-position: 0px -22px;
+	}
+	#header>.gnb>li>a>span.m03{
+		background-position: 0px -44px;
+	}
+	#header>.gnb>li>a>span.m04{
+		background-position: 0px -66px;
+	}
+	#header>.gnb>li>a>span.m05{
+		background-position: 0px -88px;
+	}
+	#header>.gnb>li:hover{
+		background-color: #e24c09;
+	}
+	
+	
+	
+	
+	/********* footer 영역 *********/
+	
+	#footer{
+		width: auto;
+		padding: 40px 0px 50px; /* 위쪽, 좌우, 아래쪽 */
+		background: #eee;
+		margin-top: 80px;
+	}
+	#footer .footer_area{
+		width: 900px;
+		margin: auto;
+	}
+	#footer .foot_guide{
+		overflow: hidden;
+		padding-bottom: 20px;
+	}
+	#footer .foot_guide li{
+		float: left;
+		padding: 0px 10px;
+		border-left: 1px solid #999;
+	}
+	/*li태그들 중 가장 첫번째 li요소*/
+	#footer .foot_guide li:first-child{
+		border-left: none;
+		padding-left: 0;
+	}
+	#footer .foot_guide li a{
+		color: #777;
+		font-size: 12px;
+		font-weight: bold;
+	}
+	#footer .foot_guide li a:hover{
+		color: #ff5001;
+	}
+	#footer address {
+	 	font-size: 12px;
+	 	color: #777;
+	 	padding-bottom: 6px;
+	}
+	#footer .copyright{
+		font-size: 11px;
+	}
+
+
+/*********************************
+버튼 스타일
+**********************************/
+	
+/*
+	버튼들 중 b_agree와 b_noagree를 해당 이미지들로 채우자!
+	b_agree의 너비는 100px, b_noagree는 너비가 122px
+	높이는 모두 30px이다.
+*/
+
+.btn{
+	display: inline-block;
+	background: url(../img/btn.png);
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+}
+.btn a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.btn_center{
+	text-align: center;
+}
+
+/*********************************
+기타 스타일
+**********************************/
+.fr{
+ 	float: right !important;
+}
+.ellip{
+/*문자열을 공간에 맞도록 표현 및 줄임표*/
+	display: inline-block;
+	width: 98%;
+	white-space: nowrap;
+/* white-space : 스페이스바, 탭 등을 공백 한 칸으로 표시하라는 얘기 */
+	overflow: hidden;
+	text-overflow: ellipsis; 
+}
+
+.fclear{
+	folat: none;
+	clear: both;
+	content: '';
+	display: block;
+	height: 0 !important; /*우선순위를 얘로 두겠다.*/
+}
+
+/*********************************
+게시판 스타일
+**********************************/
+
+.board_type01 .notice li a{
+	font-size: 12px;
+}

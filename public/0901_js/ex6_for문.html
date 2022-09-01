@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	 #box{
+	 	width: 300px;
+	 	height: 350px;
+	 	border: 1px solid #00f;
+	 }
+</style>
+</head>
+<body>
+	<button type="button" onclick="guguDan(2)">2단</button>&nbsp;
+	<button type="button" onclick="guguDan(3)">3단</button>&nbsp;
+	<button type="button" onclick="guguDan(4)">4단</button>&nbsp;
+	<button type="button" onclick="guguDan(5)">5단</button>
+	
+	<p>
+		<div id="box"></div>
+	</p>
+	
+	<script>
+		
+		function guguDan(n) {
+			
+			let box = document.getElementById("box");
+			let str = "";
+			
+			for (let i=1; i<10; i++) {
+				str += n +"*" + i + "=" + (n*i) + "</br>";
+				box.innerHTML = str;
+			}
+		}
+		
+	
+	</script>
+</body>
+</html>

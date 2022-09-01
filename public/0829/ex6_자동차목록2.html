@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+	body{
+		margin: 0;
+		padding: 0;
+		background-color: #232323;
+		color: #fff;
+	}
+	div#wrap a{color:#fff;}
+	div#wrap img{border: 0;}
+	
+	div#wrap{
+		width: 700px;
+		border:1px solid #fff;
+		margin: 60px auto; /* 위/아래  좌/우 : 화면 가운데 맞출때 사용함 */
+		margin-bottom: 0px;
+	}
+	div#wrap>h1{
+		margin: 10px;
+		font: bold 35px sans-serif;
+	}
+	ul#carList{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	li.carBox{
+		width: 170px;
+		border: 1px solid #fff;
+		margin: 0px 0px 46px 46px;/* 위쪽 오른쪽 아래쪽 왼쪽 */
+		float: left;
+	}
+	li.end{
+		float:none;
+		clear: both; /*적용되었던 float을 해제하라는 뜻*/
+	}
+	li.carBox>span>a{
+		font: 12px sans-serif;
+		text-decoration: none;
+		text-align: center;
+	}
+	li.carBox>a{
+		display: block;
+		width: 160px;
+		height: 120px;
+		border: 5px solid #232323;
+	}
+	li.carBox>a:hover{
+		border: 5px solid #f00;
+	}
+	li.carBox>span>a:hover{
+		color: #f00;
+	}
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<h1>자동차 목록</h1>
+		<ul id="carList">
+			<li class="carBox">
+				<a href="">
+					<img src="images/Aston_Martin-One-77.jpg"/>
+				</a>
+				<span><a href="">Aston Martin One 77</a></span>
+			</li>
+			<li class="carBox">
+				<a href="">
+					<img src="images/Audi-R8.jpg"/>
+				</a>
+				<span><a href="">Audi R8</a></span>
+			</li>
+			<li class="carBox">
+				<a href="">
+					<img src="images/Jaguar-XJ.jpg"/>
+				</a>
+				<span><a href="">Jaguar XJ</a></span>
+			</li>
+			<li class="carBox">
+				<a href="">
+					<img src="images/BMW-Z4.jpg"/>
+				</a>
+				<span><a href="">BMW Z4</a></span>
+			</li>			
+			<li class="carBox">
+				<a href="">
+					<img src="images/Bentley-Continental_GTC.jpg"/>
+				</a>
+				<span><a href="">Bentley Continental GTC</a></span>
+			</li>			
+			<li class="carBox">
+				<a href="">
+					<img src="images/Hyundai-Genesis.jpg"/>
+				</a>
+				<span><a href="">Hyundai Genesis</a></span>
+			</li>			
+			<li class="carBox">
+				<a href="">
+					<img src="images/Lamborghini-Reventon.jpg"/>
+				</a>
+				<span><a href="">Lamborghini Reventon</a></span>
+			</li>		
+			<li class="carBox">
+				<a href="">
+					<img src="images/Ferrari-458_Italia.jpg"/>
+				</a>
+				<span><a href="">Ferrari 458 Italia</a></span>
+			</li>
+			<li class="end"></li>
+		</ul>
+	</div>
+</body>
+</html>

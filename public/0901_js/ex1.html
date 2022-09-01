@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+	<script>
+		// 변수 선언과 초기화
+		// 자바스트립트는 자료형을 명시하지 않고,
+		// 값이 저장될 때 내부적으로 지정된다.
+		// 변수 선언시 var와 let으로 선언한다. (let을 추천)
+		let a1 = 100;
+		let a2 = 30;
+		
+		let str = "값1";
+		
+		let res = a1/a2;
+		
+		document.write("a1/a2: " + res + "<br/>");
+		
+		res = a1%a2; //나머지값
+		
+		document.write("a1%a2: " + res + "<br/>");
+		
+		//write를 하게 되면 자동 줄 바꿈이 안 된다.
+		//"<br/>" 태그를 넣어야 한다.
+		//태그들은 문자열로 표현되는 것이 아니라,
+		//해석이 되어 화면에 적용되는 것.
+		
+		document.write("<strong>"+(a1+a2)+"</strong>");
+		
+	</script>
+</body>
+</html>

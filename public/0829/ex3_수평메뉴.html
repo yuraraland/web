@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#header {
+		height: 80px;
+		margin: 0;
+		background-color: #2e2e2e;
+		color: #000;
+	}
+	#nav {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font: 22px Arial;
+		text-align: center;
+		line-height: 80px;
+	}
+	#nav>li {
+		display: inline;
+		margin-left: 20px;
+	}
+	#nav>li>a{
+		color: #fff;
+		text-decoration: none;
+	}
+	#nav a:hover {
+		/*color: #00bfff;
+		text-decoration: underline;*/
+		color: #ff8000;
+		border-bottom: 4px solid #ff8000;
+	}
+	
+	#nav .selected{
+		color: #ff8000;
+		border-bottom: 4px solid #ff8000;
+	}
+	body{
+		margin: 0;
+		padding: 0;	
+	}
+</style>
+</head>
+<body>
+	<header id="header">
+		<ul id="nav">
+			<li><a href="">Home</a></li>
+			<li><a href="" class="selected">Shop</a></li>
+			<li><a href="">Customer</a></li>
+			<li><a href="">About</a></li>
+		</ul>
+	</header>
+</body>
+</html>

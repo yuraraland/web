@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	ul#nav{
+		margin: 0;
+		padding: 0;
+		width: 300px;
+		list-style: none;
+	}
+	ul#nav>li{
+		width: 300px;
+		height: 100px;
+	}
+	ul#nav>li>a{
+		display: block; /* 인라인레벨을 잠시 블록레벨로 변경 */
+		width: 100%;
+		height: 100%;
+		overflow: hidden; /* 지정된 범위를 벗어나면 그놈은 숨겨라 */
+		text-indent: -1000px;
+	}
+	li#mail>a{
+		background: url(images/mail_a.gif) no-repeat left top;
+	}
+	li#blog>a{
+		background: url(images/blog_a.gif) no-repeat left top;
+	}
+	li#cafe>a{
+		background: url(images/cafe_a.gif) no-repeat left top;
+	}
+	li#kin>a{
+		background: url(images/kin_a.gif) no-repeat left top;
+	}
+	
+	ul#nav a:hover{
+		/*background-position: left center;*/
+		background-position: 0px -100px;
+	}
+	ul#nav a:active{
+		background-position: 0px -200px;
+	}
+</style>
+</head>
+<body>
+	<h1>수직 이미지를 이용한 메뉴</h1>
+	<ul id="nav">
+		<li id="mail"><a href="">메일</a></li>
+		<li id="cafe"><a href="">카페</a></li>
+		<li id="blog"><a href="">블로그</a></li>
+		<li id="kin"><a href="">지식in</a></li>
+	</ul>
+</body>
+</html>

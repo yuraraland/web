@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/* 현재 문서 안의 태그들 중 table이라는 태그를 만나면 수행하는 내용 */
+	table{
+		border: 1px solid black;
+		border-collapse: collapse;
+		width: 500px;
+	}
+	td{ 
+		border: 1px solid black;
+		padding: 5px;
+		text-align: center;
+	}
+
+</style>
+</head>
+<body>
+	<pre>
+		pre태그는 p태그와 같이 문단 태그다.
+		pre태그와 p태그의 다른점은
+		pre태그 내부의 내용을 그대로 표현한다.
+	</pre>
+	<p>
+	4행 4열의
+	테이블생성
+	</p>
+	
+	<table>
+		<tbody>
+			<tr>
+				<td colspan="2" rowspan="3">1</td>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>8</td>
+			</tr>
+			<tr>
+				<td colspan="2" rowspan="2">11</td>
+			</tr>
+			<tr>
+				<td>13</td>
+				<td>14</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
