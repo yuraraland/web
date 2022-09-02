@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>정규표현식 활용</h2>
+	<article>
+		<form action="" name="frm">
+			<label for="v1">값1:</label>
+			<input type="text" id="v1" name="val1"/>
+			<button type="button" onclick="exe()">확인</button>
+		</form>
+	</article>
+	
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+crossorigin="anonymous">
+</script>
+	
+	<script>
+		function exe(){
+			//자원을 가져오는 3가지 방법
+			
+			let str = document.getElementById("v1").value;
+						
+			let str2 = document.frm.val1.value;
+			//현재 문서의 frm이라는 이름을 가진 폼 객체 안에 이름으로 접근!
+			
+			let str3 = document.forms[0].val1.value;
+			
+			//jQuery 사용법
+			let str4 = $("#v1").val();
+			
+			console.log(str+"/"+str2+"/"+str3+"/"+str4);
+			
+			//trim효과를 직접 함수로 정의하여 호출해 보자!
+			let msg = m_trim(str);
+			
+			//document.frm.val1.value = msg;
+			$("#v1").val(msg); // val() 함수를 주고 () 안에 저장할 변수를 적는다.
+			//즉, val(msg)는 값을 msg에 저장하라는 말!
+			//기존에 사용자가 입력한 것을
+			//공백이 제거된 문자열로 변경한다.
+			
+			if(msg == ""){
+				alert("값을 입력하세요");
+				return;
+			}
+			
+			console.log("서버로 보낸다.");
+		}
+		
+		function m_trim(str){
+			//m_trim 이 하는 일? " " 띄운 공백을 찾아서 붙힌 공백 "" 을 만들어 준다.
+			//받은 인자의 값에서 띄운 공백을 찾아 없앤다.
+			
+			let ss = str.replace(/^\s+|\s+|\s+$/g,"");
+			/*
+				/^ : 처음 시작 부분에,
+				\s : 스페이스 즉 띄운 공백
+				+ : +기호 앞의 정규표현식(띄운공백)과 일치하는 것이 1번이상일 때
+				| : 또는
+				\s+ : 공백이 연속적으로 있다면
+				| : 또는
+				/s+: 공백이 연속적으로 있다면
+				$/ : 끝부분에
+				g : 찾는다면
+			*/
+			
+			return ss;
+		}
+	</script>
+</body>
+</html>

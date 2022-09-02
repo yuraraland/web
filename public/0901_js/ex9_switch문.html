@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	 #box{
+	 	width: 300px;
+	 	height: 350px;
+	 	border: 1px solid #00f;
+	 }
+</style>
+</head>
+<body>
+	<form action="" method="">
+		<label for="m_car">차종:</label>
+		<select id="m_car" name="car" onchange="test(this.selectedIndex)"> 
+			<option>::선택하세요::</option>
+			<option value="r8">아우디R8</option>
+			<option value="GT">벤틀리GT</option>			
+			<option value="italy">포르쉐 이탈리아</option>			
+		</select>
+	</form>
+	
+	<br/>
+	
+	<div id="box">
+	
+	</div>
+	
+	<script>
+		//function test() {
+		//}
+		
+		let test = function test(idx) {
+			// 인자인 idx는 select 태그에서 선택된 인덱스 값이다.
+			let str = "";
+			
+			switch (idx) {
+			case 1:
+				str = "여신이라 말하는 아이";
+				break; //스위치문 탈출
+			case 2:
+				str = "<strong>우아하고 구름과 같은 아이</strong>";
+				break;
+			case 3:
+				str = "잔뜩 화가나 있는 아이";
+				break;
+		}
+			document.getElementById("box").innerHTML = str;
+	}
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#box{
+		width: 400px;
+		height: 200px;
+		border: 2px solid black;
+	}
+</style>
+</head>
+<body>
+	<h1>과목</h1>
+	<button type="button" id="btn">확인</button>
+	
+	<ul>
+		<li>JavaScript</li>
+		<li>ActionScript</li>
+		<li>NodeJS</li>
+		<li>jQuery</li>
+	</ul>
+	<ul>
+		<li>C언어</li>
+		<li>자바</li>
+		<li>파이썬</li>
+	</ul>
+	
+	<div id="box"></div>
+
+
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+	integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+	crossorigin="anonymous">
+	</script>
+
+<script>
+	$(function() {
+		
+		$("#btn").bind("click", function() {
+			
+			
+			let str = "";
+			
+			let ar = $("li");
+			
+			$(ar[1]).css("color","red");
+			
+			//현재 문서에서 li태그를 만날 때마다 수행하는 문장
+			
+			let i = 0;
+			
+			for(let i=0; i<ar.length; i++){
+				//6번째 li에게만 color을 green으로 적용한다.
+				//나머지는 전부 블루로 한다.
+				
+				/*if(i == 5) {
+					$(ar[i]).css("color","green");
+				} else{
+					$(ar[i]).css("color","blue");
+				}*/
+				
+				$(ar[i]).css("color","blue");
+				
+			}
+			
+				ar.eq(5).css("color", "green");			
+			
+		});
+		
+	});
+</script>
+</body>
+</html>

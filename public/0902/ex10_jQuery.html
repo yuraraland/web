@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#box{
+		width: 400px;
+		height: 200px;
+		border: 2px solid black;
+	}
+	button[type="button"]{
+		width: 80px;
+		height: 30px;
+		border: 1px solid black;
+		border-radius: 5px;
+	}
+</style>
+</head>
+<body>
+	<button type="button" id="bt1">Red</button>
+	<button type="button" id="bt2">Green</button>
+	<button type="button" id="bt3">Blue</button>
+	<p/>
+	
+	<div id="box"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+crossorigin="anonymous">
+</script>
+
+<script>
+	$(function() { //현재문서가 열리자마자 수행하는 함수
+		//자바로 치면 생성자와 같다.
+		
+		$("#bt1").bind("click", handlerRed);
+	
+		$("#bt2").bind("click", function () {
+			
+			$("#box").css("backgroundColor", "#0f0");
+			
+			$("#bt1").unbind("click");
+			
+		});
+		$("#bt3").bind("click", function () {
+			
+			$("#box").css("backgroundColor", "#00f");
+			
+			$("#bt1").bind("click", handlerRed);
+			
+		});
+		
+	});
+	
+	function handlerRed(){
+		$("#box").css("backgroundColor", "#f00");
+	}
+</script>
+</body>
+</html>

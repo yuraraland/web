@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>여기는 H1요소입니다.</h1>
+	<h2>여기는 H2요소입니다.</h1>
+	<h1>여기는 H1요소입니다.</h1>
+	<br/>
+	
+	<input type="button" value="H1 CSS변경" id="h1_btn"/>
+	<button type="button" id="h2_btn">H2 CSS변경</button>
+	
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+	integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+	crossorigin="anonymous">
+	</script>
+	<script>
+		//HTML 문서가 열렸을 때 무조건 수행하는 영역
+		$(function(){
+			//id가 h1_btn인 요소에 클릭 이벤트를 적용
+			$("#h1_btn").click(function(){ //익명 함수!
+				
+				$("h1:first-child").css("color","#f00");
+				
+			});
+			
+			$("#h2_btn").bind("click", function() {
+				//bind 함수는, unbind 함수를 통해, 특정 상황에서는
+				//bind 된 내용을 해제할 수 있다.
+				//클릭을 적용하겠다! 는 의미
+				$("h2").css("color","blue");
+			
+			});
+			
+		}); //window.onload와 같다.
+		
+		/*function exe(){
+			//console.log("exe함수!");
+			$("h1:first-child").css("color","#f00");
+		}*/
+	</script>
+</body>
+</html>

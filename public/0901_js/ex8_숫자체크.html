@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	 #box{
+	 	width: 400px;
+	 	height: 300px;
+	 	border: 1px solid #00f;
+	 }
+</style>
+</head>
+<body>
+	<form action="">
+		<label for="b_year">태어난 년도</label>
+		<input type="text" id="b_year" name="bYear"/>
+		<button type="button" onclick="test(this.form)">확인</button>
+			<!-- this는 버튼 자기 자신,
+				 this.form 은 현재 요소를 포함하고 있는 폼이다! 
+				 즉, test 함수를 호출할 때 현재 폼 전체를 인자로 전달한다. -->
+	</form>
+	<br/>
+	<div id="box"></div>
+	
+	<script>
+		
+		function test(frm) {
+			
+			//form 자체로 접근하면 name에 바로 접근이 가능하다.
+			
+			let b_year = frm.bYear.value;
+			console.log(b_year);
+			
+			let str = "";
+			
+			if(checkNumber(b_year)){
+				//숫자만 입력된 경우 - 현재 날짜의 년도만 얻어서
+				//사용자의 생년인 b_year를 빼면, 나이가 나온다.
+				let now = new Date(); //현재 날짜
+				
+				//현재 날짜에서 년도만 검출하자!
+				let c_year = now.getFullYear();
+				
+				let age = c_year-b_year;
+				
+				if(age < 19) {
+					document.getElementById("box").innerText = age + "세, 미성년자";
+				} else {
+					document.getElementById("box").innerText = age + "세, 성년";
+				}
+				
+			}
+			
+			
+			
+		}
+		
+		function checkNumber(data) {
+			//숫자가 아니면 false
+			
+			let value = true;
+			
+			//1266a15 같은 경우를 만날 경우.
+			//받은 인자인 data에서 한 자씩 추출하여 숫자인지? 아닌지?를
+			//검사하는 반복문을 돌린다.
+			
+			for(let i=0; i<data.length; i++) {
+				//data에서 i번째 문자값을 하나 가져온다.
+				//let ch = data.charAt(i);
+				
+				//data에서 i번째의 문자 코드값을 받아내자.
+				//codeAt으로 뽑으면 아스키코드값이 넘어온다.
+				//숫자0의 코드값은 48이다.
+				//그럼 숫자 9의 코드값은? 57.
+				//우리는 48~57 범위 안에 있는 코드값이 숫자임을 알 수 있다.
+				let code = data.charCodeAt(i);
+				
+				if(code<48 || code >57){
+					//code가 48보다 작고, 57보다 크다면?! 숫자가 아니다.
+					value = false;
+					break;//반복문 탈출
+				}
+				
+			}
+			return value;
+		}
+		
+	</script>
+</body>
+</html>

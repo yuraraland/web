@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#box{
+		width: 400px;
+		height: 200px;
+		border: 2px solid black;
+	}
+</style>
+</head>
+<body>
+	<h1>과목</h1>
+	<button type="button" id="btn">확인</button>
+	
+	<ul>
+		<li id="t1">JavaScript</li>
+		<li id="t2">ActionScript</li>
+		<li id="t3">NodeJS</li>
+		<li id="t4">jQuery</li>
+	</ul>
+	<ul>
+		<li id="t5">C언어</li>
+		<li id="t6">자바</li>
+		<li id="t7">파이썬</li>
+	</ul>
+	
+	<div id="box"></div>
+
+
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+	integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+	crossorigin="anonymous">
+	</script>
+
+<script>
+	$(function() {
+		
+		$("#btn").bind("click", function() {
+			
+			
+			let str = "";
+			
+			let ar = $("li");
+			
+			$(ar[1]).css("color","red");
+			
+			//현재 문서에서 li태그를 만날 때마다 수행하는 문장
+			
+			let i = 0;
+			
+			for(let i=0; i<ar.length; i++){
+				$(ar[i]).css("color","blue");
+			}
+			
+				ar.eq(5).css("color", "green");			
+				
+				//li요소들 중 id가 t4인 요소의 위치값(index)을 알아낸다.
+				let idx = ar.index($("#t4"));
+				
+				ar.eq(idx).css("color", "red");	
+		});
+		
+	});
+</script>
+</body>
+</html>

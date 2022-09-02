@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#table{
+		width: 300px;
+		border-collapse: collapse;
+	}
+	#table th, #table td{
+		border: 1px solid #dedede;
+		padding: 4px; 
+	}
+	#table caption{
+	 text-indent: -9999px;
+	 height: 0px;
+	}
+	/*#table thead>tr:first-child td{*/
+	#table thead>tr:nth-child(1) td{
+		border: none;
+		text-align: right;
+	}
+</style>
+</head>
+<body>
+	<h2>테이블 행 추가</h2>
+	<table id="table">
+		<caption>행 추가 테이블</caption>
+		<thead>
+			<tr>
+				<td colspan="3">
+					<button type="button" onclick="add()">추가</button>
+				</td>
+			</tr>
+			<tr>
+				<th>번호</th>
+				<th>이름</th>
+				<th>연락처</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+	
+	<script>
+		
+		//function add() {}
+		
+		let add = function(){
+			//추가 버튼을 눌렀을 때 호출되는 함수.
+			
+			//테이블에 추가할 행(tr)을 만든다.
+			//하나의 행을 의미하는 전체 코드
+			let str = "<tr><td>&#8721;</td><td>&#8545;</td><td>&#8546;</td></tr>";
+			
+			//위의 내용을 table이 가지는 tbody에 HTML 코드로 넣어준다.
+			// 참고) tbody는 몇 번째 자식인가? table 3번째 자식이다.
+					
+			//먼저 table을 구한다.
+			
+			let table = document.getElementById("table");
+			
+			let tbody = table.children[2];
+			//let tbody = table.children 은 배열이다.
+			// 참고) 3번째 자식이다.
+			
+			tbody.innerHTML = str;
+			
+		}
+		
+	</script>
+</body>
+</html>

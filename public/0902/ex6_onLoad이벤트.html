@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body onload="init()">
+	<h1>onLoad이벤트</h1>
+
+	<script>
+		function init(){
+			alert("init()");
+			console.log("init()");
+		}
+		
+		//윈도우에 이벤트가 적용되는 것이 더 우선순위를 가진다.
+		window.onload = function() {
+			alert("window.onload");
+			console.log("window.onload");
+		};
+		
+	</script>
+</body>
+</html>
