@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#table{
+		width: 300px;
+		border-collapse: collapse;
+	}
+	#table th, #table td{
+		border: 1px solid #dedede;
+		padding: 4px; 
+	}
+	#table caption{
+	 text-indent: -9999px;
+	 height: 0px;
+	}
+	/*#table thead>tr:first-child td{*/
+	#table thead>tr:nth-child(1) td{
+		border: none;
+		text-align: right;
+	}
+</style>
+</head>
+<body>
+	<h2>테이블 행 추가</h2>
+	
+	<form action="">
+		<label for="u_name">이름</label>
+		<input type="text" id="u_name" name="name"/><br/>
+		<label for="u_phone">연락처</label>
+		<input type="text" id="u_phone" name="phone"/><br/>
+	</form>
+	<table id="table">
+		<caption>행 추가 테이블</caption>
+		<thead>
+			<tr>
+				<td colspan="4">
+					<button type="button" id="add_btn">추가</button>
+				</td>
+			</tr>
+			<tr>
+				<th>번호</th>
+				<th>이름</th>
+				<th>연락처</th>
+				<th>삭제</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+	
+
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+	integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+	crossorigin="anonymous">
+	</script>
+	
+	<script>
+			$(function() {
+				
+				let idx = 1;
+				
+				$("#add_btn").bind("click", function() {
+					
+					let name = $("u_name").val();
+					let phone = $("u_phone").val();
+					
+					let str = "<tr>";
+					
+					for(let i=0; i<3; i++){
+						
+						str += "<td>";
+						
+						switch(i){
+						case 0:
+							str += idx++;
+							break;
+						case 1:
+							str += name;
+							break;
+						case 2:
+							str += phone;
+							break;
+						}
+						str += "</td>";
+						
+					}
+					str += "</tr>";
+					//str은 "<tr><td>1</td><td>name</td><td>phone</td></tr>
+					
+					//아이디가 table인 요소 안에 tbody를 검색하여 str의 내용을 추가!
+					
+					$("#table>tbody").append(str);
+			
+					
+				});
+				
+			});
+	
+	</script>
+
+</body>
+</html>

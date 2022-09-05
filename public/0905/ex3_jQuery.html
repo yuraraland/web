@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.test{
+		font-size: 20px;
+		font-weight: bold;
+		color: blue;
+}
+</style>
+</head>
+<body>
+	<input type="button" id="btn" value="적용"/>
+	<div>
+		<p>조심하자 힌남노</p>
+		<em>월요일</em>
+		첫번째 DIV
+	</div>
+	<div>
+		<p>몰디브</p>
+		<p>산토리니</p>
+		<p>그로토</p>
+	</div>
+	<p>가자~</p>
+</body>
+
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+	integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+	crossorigin="anonymous">
+	</script>
+	<script>
+		$(function() {
+			//div들 중 첫번째 div 자식요소들에게 글꼴색을 변경해 보자!
+			
+			$("div").eq(0).children().css("color", "red");
+			
+			let chk = true;
+			
+			//적용 버튼을 클릭했을 때
+			//두번째 자식 요소에게 test라는 클래스를 적용시킨다.
+			
+			$("#btn").bind("click", function(){
+				
+				if(chk){
+					$("div").eq(1).children().addClass("test");
+					$(this).val("해제");
+				}else{
+					$("div").eq(1).children().removeClass("test");
+					$(this).val("적용");
+				}
+				chk = !chk; //매번 chk의 값을 반대로 바꿔준다.
+			});
+			
+			
+		});
+	</script>
+	
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#box{
+	width: 350px;
+	height: 150px;
+	background-color: #00bfff;
+}
+#box>p{
+	font-size: 20px;
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+	<input type="button" value="감추기" id="btn"/>
+	
+	<div id="box">
+		<p>힘들죠? 인생 뭐 있나요? <br/> 힘들면 쉬었다 가면 됩니다.</p>
+	</div>
+	
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+	integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+	crossorigin="anonymous">
+	</script>
+	<script>
+			$(function() {
+				//box를 보여주기, 안 보여주기 수행
+				
+				let chk = true;
+		
+				$("#btn").bind("click", function() {
+					
+					if(chk){
+						//$("#box").fadeOut(500);
+						$("#box").fadeTo(500, 0, 0);
+						$(this).val("보이기");
+					}else{
+						//$("#box").fadeIn(500);
+						$("#box").fadeTo(500, 1);
+						$(this).val("감추기");
+					}
+					chk = !chk;
+				});
+				
+			});
+	</script>
+</body>
+</html>

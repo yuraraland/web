@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#table{
+		width: 350px;
+		border-collapse: collapse;
+	}
+	#table th, #table td{
+		border: 1px solid #dedede;
+		padding: 4px; 
+	}
+	#table caption{
+	 text-indent: -9999px;
+	 height: 0px;
+	}
+	/*#table thead>tr:first-child td{*/
+	#table thead>tr:nth-child(1) td{
+		border: none;
+		text-align: right;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<label for="u_name">이름:</label>
+		<input type="text" id="u_name" name="name"/><br/>
+		
+		<label for="u_phone">연락처:</label>
+		<input type="text" id="u_phone" name="phone"/> 
+	</div>
+	<br/>
+		<table id="table">
+			<thead>
+				<tr>
+					<td colspan="3">
+						<button type="button" id="btn">추가</button>
+					</td>
+				</tr>
+				<tr>
+					<th>번호</th>
+					<th>이름</th>
+					<th>연락처</th>
+				</tr>
+			</thead>
+			<tbody>
+			
+			</tbody>
+		</table>
+
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+	integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+	crossorigin="anonymous">
+	</script>
+	
+	<script>
+	
+		let count = 0;
+		$(function() {
+			
+			let str = "";
+			
+			$("#btn").bind("click", function() {
+				
+				if($("#u_name").val().trim().length < 1) {
+					alert(u_name.name + "을 입력해 주세요.")
+					u_name.focus();
+					return;
+				}
+				
+				if($("#u_phone").val().trim().length < 1) {
+					alert(u_phone.name+"을 입력해 주세요.")
+					u_phone.focus();
+					return;
+				}
+				
+				let name = "<td>"+$("#u_name").val()+"</td>";
+				let phone = "<td>"+$("#u_phone").val()+"</td>";
+				let cnt = "<td>"+ ++count + "</td>";
+				
+				let str = "<tr>"+ cnt + name + phone + "</tr>";
+				let tr = $("tbody").html(str);
+				
+			});
+			
+		});
+	</script>
+
+</body>
+</html>

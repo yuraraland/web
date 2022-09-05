@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#box{
+	width: 350px;
+	height: 150px;
+	background-color: #00bfff;
+}
+#box>p{
+	font-size: 20px;
+	font-weight: bold;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+	<div id="box">
+		<p>힘들죠? 인생 뭐 있나요? <br/> 힘들면 쉬었다 가면 됩니다.</p>
+	</div>
+	
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+	integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+	crossorigin="anonymous">
+	</script>
+	<script>
+			$(function() {
+	
+			$("#box").bind("click", function() {
+				//box를 클릭하면 div 요소의 위치를 상태적 위치 형태로 변경하자.
+				$(this).css("position", "relative");
+				
+				$(this).animate({top:0, left:$(window).width()-$(this).width()}, 1000, function() {
+					//위에서 500위치까지 도달했을 때 수행하는 곳.
+					$(this).fadeTo(500, 0); //0은 투명도이며, 0은 보이지 않는 경우다. 1이 보이는 경우!
+					
+				});
+				
+		
+			});
+				
+			});
+	</script>
+</body>
+</html>

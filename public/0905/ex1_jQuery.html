@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>jQuery 함수 활용</h1>
+	<div id="box1">
+		<header>
+			<h1>제목1</h1>
+		</header>
+		<section>
+			<input type="radio" value="public" name="rdo"/>공개용
+			&nbsp;&nbsp;
+			<input type="radio" value="private" name="rdo"/>
+			<span>비공개용</span>
+		</section>
+	</div>
+
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+	integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+	crossorigin="anonymous">
+	</script>
+	
+	<script>
+		$(function() {
+			
+			//라디오 버튼들을 모두 가져온다.
+			
+			let r_ar = $("#box1").find(":radio"); //find(:(type속성)); 원래는 css 선택자를 넣어줘야 한다.
+			//alert(r_ar.length+"/"+r_ar[0].value);
+			
+			$(r_ar[r_ar.length-1]).prop("checked", true);
+			//마지막에 있는 radio 기본값으로 선택해 놓기.
+			
+			//마지막에 있는 radio버튼 다음에 있는 요소를 검색한다.
+			$(r_ar[r_ar.length-1]).next().text("Private");
+			
+			
+		});
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#box{
+	width: 350px;
+	height: 150px;
+	background-color: #00bfff;
+}
+#box>p{
+	font-size: 20px;
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+	<input type="button" value="감추기" id="btn"/>
+	
+	<div id="box">
+		<p>힘들죠? 인생 뭐 있나요? <br/> 힘들면 쉬었다 가면 됩니다.</p>
+	</div>
+	
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+	integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+	crossorigin="anonymous">
+	</script>
+	<script>
+			$(function() {
+				//box를 보여주기, 안 보여주기 수행
+				$("#btn").bind("click", function() {
+					let str = $("#box").is(":hidden")?"감추기":"보이기";
+					
+					$(this).val(str); //버튼의 문자열을 변경한다.
+					
+					//아이디가 box인 요소가 보여지고 있다면 숨겨야 한다.
+					//그렇지 않고 숨겨져 있었다면, 보여줘야 한다.
+					
+					/*if($("#box").css("display") == "block") {
+						$("#box").hide(300);
+					}else {
+						$("#box").show(300);
+					}*/
+					
+					$("#box").toggle(100);
+					
+				});
+				
+			});
+	</script>
+</body>
+</html>
