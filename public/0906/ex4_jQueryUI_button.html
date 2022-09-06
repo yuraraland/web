@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+</head>
+<body>
+	
+	<button type="button" id="btn1">Mybutton1</button>
+	<button type="button" id="btn2">Mybutton2</button>
+	<button type="button" id="btn3">Mybutton3</button>
+	<button type="button" id="btn4">Mybutton4</button>
+	<a href="#" class="btn">Mybutton</a>
+
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+	integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+	crossorigin="anonymous">
+	</script>
+	
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	
+	<script>
+		$(function() {
+			$("button, .btn").button();
+			$("button, .btn").bind("click", function() {
+				
+				alert($(this).text());
+				
+			});
+			
+		});
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<style>
+	#btn_area{
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+
+	<input type="button" value="열려라" id="btn"/>
+	
+	<!-- 팝업창(대화상자) -->
+	<div id="m_dialog" title="MyDialog">
+		<p>와! jQueryUI에서 지원하는<br/>대화상자!</p>
+		<div id="btn_area">
+			<input type="button" id="ok_btn" value="확인"/>
+		</div>
+	</div>
+	
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+	integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+	crossorigin="anonymous">
+	</script>
+	
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	
+	<script>
+		$(function() {
+			$("#m_dialog").dialog();
+		});
+		
+		$("#ok_btn").bind("click", function() {
+			$("#m_dialog").dialog("close");
+		});
+		
+		$("#btn").bind("click", function() {
+			$("#m_dialog").dialog("open");
+		});
+	</script>
+</body>
+</html>

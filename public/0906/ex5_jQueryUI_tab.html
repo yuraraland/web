@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<style>
+	.w500{ width: 500px; }
+	.w600{ width: 600px; }
+	.w700{ width: 700px; }
+</style>
+</head>
+<body>
+
+	<div id="content" class="w500">
+		<div id="tab">
+			<!-- 누르는 탭들 -->
+			<ul>
+				<li><a href="#t1">첫번째</a></li>
+				<li><a href="#t2">두번째</a></li>
+				<li><a href="#t3">세번째</a></li>
+			</ul>
+			<div id="t1">
+			첫번째 tab의 내용입니다!
+			</div>
+			<div id="t2">
+			두번째 tab의 내용입니다!
+			</div>
+			<div id="t3">
+			세번째 tab의 내용입니다!
+			</div>
+		</div>
+		<br/>
+		<br/>
+		<div id="accordion">
+			<h2>첫번째</h2>
+			<div>첫번째 내용</div>
+			<h2>두번째</h2>
+			<div>두번째 내용</div>
+			<h2>세번째</h2>
+			<div>세번째 내용</div>
+		</div>
+		<br/>
+		<br/>
+		<div id="radio">
+			<h2>과일</h2>
+			<label for="rd1">사과</label>
+			<input type="radio" name="rd1" id="rd1"/>
+			<label for="rd2">포도</label>
+			<input type="radio" name="rd2" id="rd2"/>
+			<label for="rd3">딸기</label>
+			<input type="radio" name="rd3" id="rd3"/>
+		</div>
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+	integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+	crossorigin="anonymous">
+	</script>
+	
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	
+	<script>
+	
+	$(function() {
+		
+		$("#tab").tabs();
+		
+		$("#accordion").accordion();
+		
+		$("input").checkboxradio();
+		
+	});
+	
+	</script>
+	
+</body>
+</html>

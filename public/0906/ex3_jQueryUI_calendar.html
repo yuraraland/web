@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<style>
+	#b_date{
+		border: 1px solid #ababab;
+		border-radius: 5px;
+		padding: 8px;
+	}
+</style>
+</head>
+<body>
+	
+	<form action="">
+		<label for="b_date">Date: </label>
+		<input type="text" id="b_date" placeHolder="birth day"/>
+	</form>
+
+
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+	integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+	crossorigin="anonymous">
+	</script>
+	
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	
+	<script>
+		$(function() {
+			$("#b_date").datepicker({
+				dayNamesMin: [ "일", "월", "화", "수", "목", "금", "토" ],
+				monthNamesShort: [ "1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월" ],
+				monthNames: [ "1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월" ],
+				dateFormat: "yy-mm-dd",
+				showMonthAfterYear: true,
+				changeYear: true,
+				changeMonth: true,
+				nextText: "다음달",
+				prevText: "이전달",
+				minDate: -1,
+				maxDate: "+10w",
+				numberOfMonths: [1, 2]
+			});
+		});
+	</script>
+	
+</body>
+</html>

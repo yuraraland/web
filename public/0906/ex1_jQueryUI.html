@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#box{
+		width: 200px;
+		height: 150px;
+		padding: 10px;
+		border: 1px solid #000;
+		position: absolute;
+		top: 120px;
+		left: 300px;
+		display: none;
+	}
+</style>
+</head>
+<body>
+	<input type="button" value="열려라" id="btn"/>
+	<br/><br/>
+	<img src="images/Step1.png" id="img1"/>
+	
+	<div id="box">
+		<header>
+			<h2>Title</h2>
+			<div id="close_area">
+				<input type="button" value="닫기" id="close_btn"/>
+			</div>
+		</header>
+		<section>
+			내용
+		</section>
+	</div>
+	
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+	integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+	crossorigin="anonymous">
+	</script>
+	
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	
+	<script>
+		
+		$(function() {
+			
+			$("#box").draggable({axis:"y"});
+			$("#img1").draggable({axis:"x"});
+			$("#btn").bind("click", function() {
+				
+				$("#box").css({display:"block"});
+				
+			});
+			
+			$("#close_btn").bind("click", function() {
+				$("#box").css({display:"none"});
+			});
+		});
+	
+	</script>
+</body>
+</html>

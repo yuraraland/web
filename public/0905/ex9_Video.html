@@ -48,7 +48,7 @@
 		<h1>비디오 도구 제작</h1>
 	</header>
 	<section id="contant">
-		<video id="myVideo" width="608" height="456">
+		<video id="myVideo" width="608" height="456" poster="images/Step1.png">
 			<source src="media/Falls.mp4"/>
 		</video>
 		<div id="video_control">
@@ -70,6 +70,9 @@
 	</script>
 	
 	<script>
+	
+		let video = $("#myVideo").get(0);
+	
 		$(function() {
 			//만약! 브라우저가 video 태그를 지원하지 않는다면?
 			//(HTML5를 지원하지 않는 브라우저일 경우!)
@@ -87,7 +90,6 @@
 			//클릭하면 (이벤트) 를 실행시켜야 한다.
 			
 			//let video = document.getElementById("myVideo");
-			let video = $("#myVideo").get(0);
 			
 			$("#play_toggle").bind("click", function(){
 				//현재 video가 정지된 상태일 경우에만 실행하자!
@@ -110,10 +112,21 @@
 			//비디오 태그가 기억하고 있는 종료시간이 수정된다.
 			//이것 또한 이벤트로 접근할 수 있다.
 			
-			$(video).bind("durationchange", function() {
-				//console.log(this.duration);
-				//13.2121
-				$("#duration").text(formatTime(this.duration));
+			$(video).bind("timeupdate", function() {
+				//console.log("current:"+this.currentTime);
+				let c_time = formatTime(this.currentTime);
+				//console.log(c_time);
+				$("#current_time").text(c_time);
+				
+				//진행바(play_progress)를 현재 시간과 총 시간(duration)을 100%로 두고
+				//연산하여 너비를 구한다.
+				
+				let timePercent = (this.currentTime/this.duration) * 100;
+				//console.log(timePercent);
+				
+				//위에서 구한 백분율을 play_progress의 너비로 지정한다.
+				$("#play_progress").css({width:timePercent+"%", backgroundColor:"blue"});
+				
 			});
 			
 		});
@@ -123,17 +136,25 @@
 			let second = Math.round(time); //13
 			let minute = Math.floor(second/60); // 절삭 분 1
 			
-		
+			//time의 값이 73.212 라면 (예를들어)
+			//second에는 73이 들어가 있다.
+			//minute에는 1이 저장되어 있다.
+			//즉, second의 값이, 정확한 초의 값이 아니다.
+			//이제 분을 가려냈으니 정확한 초의 값을 연산하여 넣어주자.
 			
-			if(second.length<2){
-				
-			}
-			if(minute.length<2){
+			second = second%60; //13이 들어간다.
 			
-			}
-			
+			//이후의 second는 13, minute는 1
+			//실제 화면에 표현하는 문장은 01:13 이어야 한다.
+			//다시 말해서, 표현할 값이 1자리면 앞에 0을 붙여야 한다.
 
-			
+			if(minute<10){
+				minute = "0" + minute;
+			}
+			if(second<10){
+				second = "0" + second;
+			}
+
 			return minute + ":" + second;
 		}
 	</script>
