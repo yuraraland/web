@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<header>
+		<h1>Session Storage예제</h1>
+	</header>
+	<div id="wrap">
+		<form action="">
+			<fieldset>
+				<table>
+					<tbody>
+						<tr>
+							<td>
+								<label for="t1">code name:</label>
+							</td>
+							<td>
+								<input type="text" name="txt" id="t1"/>
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="2">
+								<input type="button" value="save"
+									onclick="addData()"/>
+								<input type="button" value="clear"
+									onclick="clearData()"/>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</fieldset>
+		</form>
+	</div>
+	<div id="result">
+		<!-- 저장된 storage값을 표현할 곳 -->
+	</div>	
+	
+	<script>
+		let db = getStorage(); // 저장소
+		let str = ""; // 결과 문자열을 수집할 변수
+		let result = document.getElementById("result");
+		
+		window.onload = function(){
+			initData();
+		}
+		
+		function initData(){
+			str = "";
+			
+			//저장소에 저장된 키와 값을 얻어낸다.
+			// 그리고 str에 적재한다.
+			for(let i=0; i<db.length; i++){
+				// storage에 저장된 데이터만큼 반복한다.
+				let key = db.key(i);// 키를 하나씩 가져온다.
+				
+				str += key+":"+db.getItem(key)+"<br/>"; // code007:마루치
+				//저장할 때에는 setItem, 가져올 때에는 getItem.
+			}
+			result.innerHTML = str;
+			//result = div
+		}
+		
+		function addData(){
+			//사용자가 입력한 코드값을 가져온다.
+			let code_val = document.getElementById("t1").value.trim();
+			
+			//미리 준비해둔 storage 즉 db라는 변수에 저장한다.
+			db.setItem("code007", code_val);
+			/*db.setItem("code008", code_val);
+			db.setItem("code009", code_val);
+			db.setItem("code000", code_val);*/
+			
+			//화면에 저장된 내용을 확인하는 함수 호출
+			initData();
+		}
+		
+		function getStorage(){ //localSession 저장소! (자바의 Map 구조와 같다.)
+			//setItem으로 저장 가능. 키와 값으로 저장해야 한다.
+			try{
+				if(window.sessionStorage)
+					return window.sessionStorage;
+				//session은 각 페이지당 저장소가 각 하나씩이다.
+			}catch(e){
+				return undefined;
+			}
+		}
+		
+		function clearData(){
+			db.clear();// 저장된 정보 모두 삭제
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+

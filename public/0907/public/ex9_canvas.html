@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#can{
+		border: 3px dotted black;
+	}
+</style>
+</head>
+<body>
+	<h1>Canvas 연습</h1>
+	<section>
+		<canvas id="can" width="600" height="300">
+			현재 브라우저에서는 Canvas를 지원하지 않습니다.
+		</canvas>
+	</section>
+	<script>
+		window.onload=function(){
+			//캔버스 얻어내기
+			let can = document.getElementById("can");
+			
+			//그리기를 수행하는 2d객체를 canvas에서 얻어낸다.
+			let ctx = can.getContext("2d");
+			if(ctx){//저장된 것이 있다면 true로 인식함
+				// arc(호의중심점x, 호츼중심점y, 반지름, 시작위치, 끝위치, 시계방향(false)/반시계방향(true))
+				//시작 위치 값을 구하기 위해 1.5*Math.PI를 기입하는데 이는
+				// 원주율 각도 180의 1.5배를 의미하여 시계의 3시방향이 0도이므로 12시 쯤이 180도의 1.5배의
+				//위치가 되어 시작 위치 값으로 지정되도록 하자!
+				
+				ctx.strokeStyle = "blue";
+				ctx.fillStyle = "red";
+				ctx.lineWidth = 5;
+				
+				ctx.beginPath();
+				ctx.arc(150, 150, 100, Math.PI*1.5, Math.PI*2, true);
+				ctx.stroke();
+				
+				// 호를 그린 후 그려진 호의 범위를 구하여 색을 칠해보자!
+				let degrees = 173;
+				let radiant = (Math.PI/180) * degrees;
+				ctx.beginPath();
+				ctx.arc(480, 150, 100, 0, radiant, false);
+				ctx.stroke();
+				ctx.fill();
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+

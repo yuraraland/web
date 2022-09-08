@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<header>
+	<h1>HTML5 File API</h1>
+</header>
+<section>
+	<input type="file" id="s_file"/>
+	<select id="enc">
+		<option value="utf-8">UTF-8</option>
+		<option value="8859-1">8859-1</option>
+	</select>
+	<button type="button" onclick="readFile()">읽기</button>
+</section>
+	<div>
+		<span id="fileName">File Name</span>
+		<span id="fileSize">(File Size)</span>
+	</div>
+	<textarea id="content" readonly="readonly" style="width:600px; height: 400px;">
+	</textarea> <!-- readonly로 지정하면 커서가 안 들어간다. -->
+
+<script>
+
+	let readFile = function(){
+	//사용자가 선택한 파일 가져오기
+	let file = document.getElementById("s_file").files[0];
+	
+	//선택된 파일의 이름과 용량을 가져온다.
+	//document.getElementById("fileName").innerText = file.name
+	document.getElementById("fileName").textContent = file.name;
+	document.getElementById("fileSize").textContent = "("+
+			file.size+")";
+	
+	//인식된 파일로부터 읽기를 수행하기 위해
+	//FileReader객체를 생성한다.
+	
+	let reader = new FileReader();
+	
+	//reader에게 읽기를 수행하라는 명령이 떨어진 후,
+	//reader로 부터 자원을 읽기가 끝날 때 이벤트를 감지하여
+	//특정 메서드를 수행하도록 한다.
+	
+	reader.onload = function(){
+		//파일 자원들을 읽었으면 현재 문서에서 id가
+		//content인 textarea 객체를 가져온다.
+		//(읽은 내용을 출력하기 위해)
+		
+		let ta = document.getElementById("content");
+		
+		ta.textContent = reader.result;
+	};
+	
+	//reader에서 오류가 발생했을때를 감지하는 이벤트도 지정한다.
+	
+	reader.onerror = function(e){
+		console.log(e.target.error.code);
+	};
+	
+	//인코딩 종류를 선택하여 파일을 읽을 때 사용하도록 한다.
+	
+	let enc = document.getElementById("enc");
+	//let encType = enc.value
+	let encType = enc.options[enc.selectedIndex].innerText; //내가 선택한 인덱스값
+	//꼭 알아야 한다!!!! selectedIndex!!!
+	//alert(encType);
+	
+	//파일 자원들을 읽기하기 위해 명령어 실행!! 시작하란 소리!!!
+	reader.readAsText(file, encType);
+}
+	
+</script>
+
+</body>
+</html>

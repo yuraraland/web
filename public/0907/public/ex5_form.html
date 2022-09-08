@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="">
+		<fieldset>
+			<legend>Form 속성 연습</legend>
+			<table>
+				<tbody>
+					<tr>
+						<th><label for="txt1">Required</label></th>
+						<td>
+							<input type="text" name="txt1" id="txt1" required/>
+						</td>
+					</tr>
+					<tr>
+						<th><label for="txt2">AutoFocus</label></th>
+						<td>
+							<input type="text" name="txt2" id="txt2" autofocus/>
+						</td>
+					</tr>
+					<tr>
+						<th><label for="txt3">PlaceHolder</label></th>
+						<td>
+							<input type="text" name="txt3" id="txt3" placeholder="입력..."/>
+						</td>
+					</tr>
+					<tr>
+						<th><label for="txt4">Input Pattern</label></th>
+						<td>
+							<input type="text" name="txt4" id="txt4" pattern="[0-9][A-Z]{3}" 
+							 title="1개의 숫자 다음에 3개의 대문자를 입력하세요"/>
+						</td>
+					</tr>
+					<tr>
+						<th><label for="txt5">File:</label></th>
+						<td>
+							<input type="file" name="txt5" id="txt5" />
+						</td>
+					</tr>
+					<tr>
+						<th><label for="txt6">Multiple File:</label></th>
+						<td>
+							<input type="file" name="txt6" id="txt6" multiple/>
+						</td>
+					</tr>
+					<tr>
+						<th><label for="txt7">DataList:</label></th>
+						<td>
+							<input type="text" name="txt7" id="txt7" list="paper"/>
+							<datalist id="paper">
+								<option value="빨간종이"></option>
+								<option value="파란종이"></option>
+								<option value="노란종이"></option>
+							</datalist>
+						</td>
+					</tr>
+					
+					<tr>
+						<td colspan="2">
+							<button type="submit">보내기</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>
+	</form>
+	
+</body>
+</html>

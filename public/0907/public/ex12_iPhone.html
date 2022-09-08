@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#can{
+		border: 3px dotted black;
+	}
+</style>
+</head>
+<body>
+	<h1>Canvas 연습</h1>
+	<section>
+		<canvas id="can" width="600" height="400">
+			현재 브라우저에서는 Canvas를 지원하지 않습니다.
+		</canvas>
+	</section>
+	<script>
+		window.onload=function(){
+			//캔버스 얻어내기
+			let can = document.getElementById("can");
+			
+			//그리기를 수행하는 2d객체를 canvas에서 얻어낸다.
+			let ctx = can.getContext("2d");
+			if(ctx){//저장된 것이 있다면 true로 인식함
+				
+				//스마트폰의 테두리
+				ctx.beginPath();
+				ctx.moveTo(100, 40);
+				ctx.quadraticCurveTo(100,20,120,20);
+				ctx.lineTo(280, 20);
+				ctx.quadraticCurveTo(300,20,300,40);
+				ctx.lineTo(300, 360);
+				ctx.quadraticCurveTo(300,380,280,380);
+				ctx.lineTo(120, 380);
+				ctx.quadraticCurveTo(100,380,100,360);
+				ctx.closePath();
+				
+				//원형 그라데이션 효과(왼쪽 상단:빛을 받는 효과)
+				// 인자(x,y,r, x1, y1, r1)
+				let radialGradient = ctx.createRadialGradient(120,20,0, 120, 20, 120);
+				
+				//0이 첫번째 원(시작지점)의 색
+				radialGradient.addColorStop(0, '#555');
+				
+				//1이 두번째 원(끝지점)의 색
+				radialGradient.addColorStop(1, '#000');
+				
+				ctx.fillStyle = radialGradient;
+				
+				//그림자 효과를 지정하기 전까지의 상태를 저장한다.
+				ctx.save();
+				
+				//그림자 효과
+				ctx.shadowOffsetX = 6;
+				ctx.shadowOffsetY = 6;
+				ctx.shadowBlur = 5;
+				ctx.shadowColor = "rgba(0,0,0,0.6)";
+				
+				ctx.fill();
+				
+				//그림자효과가 안들어간 상태를 다시 불러온다.
+				ctx.restore();
+				
+				// 태두리 상단에 스피커 모양 만들기
+				// 위치는 170,35에서 시작해서 230,35까지 스피커모양을 그려보자!
+				ctx.strokeStyle = "#3d3d3d";
+				ctx.lineWidth = 7;
+				ctx.beginPath();
+				ctx.lineCap = "round";// 라인의 끝부분은 둥글게
+				ctx.moveTo(170, 35);
+				ctx.lineTo(230,35);
+				
+				ctx.stroke();
+				
+				//이미지 객체(img태그 생성)
+				let img = document.createElement("img"); // <img></img>
+				img.src = "images/tree.jpg"; //<img src="images/tree.jpg"
+				
+				
+				//img태그를 생성을 했지만 body에 추가(appendChild)를 하지 않아서 보이지는 않는다.
+				//하지만 이미지가 로드가 완료될 때 canvas에 이미지를 보이게 하자!
+				img.onload = function(){
+					ctx.drawImage(img, 110,50,180,310);
+				}
+				
+			}
+		}
+	</script>
+	
+</body>
+</html>
+
+
+
+
+

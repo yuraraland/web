@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="">
+		<fieldset>
+			<legend>DataList연습</legend>
+			<label for="hp">홈페이지</label>
+			<input type="url" list="s_list" name="hp" id="hp" required/><br/>
+			<datalist id="s_list">
+				<option value="http://www.google.com" label="Google"/>
+				<option value="http://www.naver.com" label="네이버"/>
+				<option value="http://www.increpas.com" label="인크레파스"/>
+			</datalist>
+			<button type="submit">보내기</button>
+		</fieldset>
+	</form>
+</body>
+</html>

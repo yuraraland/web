@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="" oninput="out.value=parseInt(ss.value)*parseInt(ss2.value)">
+		<fieldset>
+			<legend>Number연습</legend>
+			<label for="ss">Number:</label>
+			<input type="number" name="ss" id="ss" 
+				min="0" max="10" value="2"/>
+			<label>*</label>
+			<input type="number" name="ss2" id="ss2" 
+				min="0" max="10" value="2"/>	
+			<label>=</label>
+			<output name="out">4</output>
+			<p>
+				<button type="submit">보내기</button>
+			</p>
+		</fieldset>
+	</form>
+</body>
+</html>

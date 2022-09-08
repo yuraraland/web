@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#can{
+		border: 3px dotted black;
+	}
+</style>
+</head>
+<body>
+	<h1>Canvas 연습</h1>
+	<section>
+		<canvas id="can" width="600" height="300">
+			현재 브라우저에서는 Canvas를 지원하지 않습니다.
+		</canvas>
+	</section>
+	<script>
+		window.onload=function(){
+			//캔버스 얻어내기
+			let can = document.getElementById("can");
+			
+			//그리기를 수행하는 2d객체를 canvas에서 얻어낸다.
+			let ctx = can.getContext("2d");
+			if(ctx){//저장된 것이 있다면 true로 인식함
+				ctx.strokeStyle = "blue";
+				ctx.fillStyle = "red";
+				ctx.lineWidth = 5;
+				
+				//다각형은 점들의 집합인 path를 시작한다.
+				ctx.beginPath();
+				ctx.moveTo(25, 175);
+				ctx.lineTo(50,25);
+				ctx.lineTo(125,50);
+				ctx.lineTo(175,175);
+				
+				ctx.stroke(); // path의 시작은 있었으나 닫지는 않았다.
+				
+				//새로운 다각형을 그리기 위해 path를 시작한다.
+				ctx.beginPath();
+				ctx.moveTo(225, 175);
+				ctx.lineTo(250,25);
+				ctx.lineTo(325,50);
+				ctx.lineTo(375,175);
+				ctx.closePath();// path닫기
+				ctx.stroke();
+				
+				ctx.beginPath();
+				ctx.moveTo(425,175);
+				ctx.lineTo(450,25);
+				ctx.lineTo(525,50);
+				ctx.lineTo(575,175);
+				ctx.closePath();// path닫기
+				ctx.fill();// 색 채우기
+				ctx.stroke();
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+

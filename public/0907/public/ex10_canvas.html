@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#can{
+		border: 3px dotted black;
+	}
+</style>
+</head>
+<body>
+	<h1>Canvas 연습</h1>
+	<section>
+		<canvas id="can" width="600" height="300">
+			현재 브라우저에서는 Canvas를 지원하지 않습니다.
+		</canvas>
+	</section>
+	<script>
+		window.onload=function(){
+			//캔버스 얻어내기
+			let can = document.getElementById("can");
+			
+			//그리기를 수행하는 2d객체를 canvas에서 얻어낸다.
+			let ctx = can.getContext("2d");
+			if(ctx){//저장된 것이 있다면 true로 인식함
+				let str = "INCREPAS";
+			
+				ctx.fillText(str, 20, 20);// 기본
+				
+				ctx.font = "25px Georgia";
+				ctx.fillText(str, 20, 60);// 글꼴과 크기 지정
+				
+				ctx.fillStyle = "blue";
+				ctx.fillText(str, 20, 100);
+				
+				ctx.font = "40px Verdana";
+				ctx.fillStyle = "yellow";
+				ctx.textBaseline = "middle";
+				ctx.lineWidth = 5;
+				ctx.strokeStyle = "rgba(0, 0, 255, 0.8)";
+				ctx.fillText(str, 20, 160);
+				
+				
+				//그림자 효과
+				ctx.shadowColor = "#000";
+				ctx.shadowOffsetX = 3;
+				ctx.shadowOffsetY = 3;
+				
+				ctx.fillStyle = "blue";
+				ctx.fillText(str, 20, 200);
+				
+				
+				ctx.shadowOffsetX = 7;
+				ctx.shadowOffsetY = 4;
+				ctx.shadowBlur = 5;
+				ctx.fillStyle = "yellow";
+				ctx.fillText(str, 20, 250);
+				
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
